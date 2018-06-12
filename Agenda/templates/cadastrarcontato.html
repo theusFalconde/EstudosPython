@@ -1,0 +1,20 @@
+{% extends "layout.html" %} 
+{% block title %}Cadastrar Contato{% endblock %} 
+{% block body %}
+<h3 style="margin-top: 15px"><i class="fa fa-address-book-o" aria-hidden="true"></i> Cadastrar Contato</h3>
+
+<form action="{{ url_for('cadastrar_contato') }}" method="post" style="margin-top: 20px;">
+    <input type="hidden" value="{{contato.id}}" name="id" id="id">
+    <div class="form-group">
+      <label for="nome">Nome</label>
+      <input type="text" value="{{contato.nome}}" class="form-control" id="nome" placeholder="Digite o Nome do Contato" name="nome" maxlength="255" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" value="{{contato.email}}" class="form-control" id="email" placeholder="Digite o E-mail do Contato" name="email" maxlength="255">
+    </div>
+    <a href="/" class="btn btn-danger"><i class="fa fa-reply" aria-hidden="true"></i> Voltar</a>
+    <button type="submit" class="btn btn-success"><i class="fa fa-check" aria-hidden="true"></i> Cadastrar</button>
+</form>
+
+{% endblock %}

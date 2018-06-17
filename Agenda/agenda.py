@@ -1,4 +1,4 @@
-# agenda.py
+# -*- coding: utf-8 -*-
 
 from DBClasses import Contato, Endereco, Telefone
 import Database as db

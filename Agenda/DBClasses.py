@@ -1,4 +1,4 @@
-#DBClasses.py
+# -*- coding: utf-8 -*-
 
 import os
 import sys
@@ -21,7 +21,7 @@ class Contato(Base):
 class Endereco(Base):
     __tablename__ = 'endereco'
     id = Column(Integer, primary_key = True)
-    rua = Column(String(255))
+    rua = Column(String(255), nullable = False)
     numero = Column(String(255))
     cep = Column(String(255), nullable = False)
     contato_id = Column(Integer, ForeignKey('contato.id', ondelete='CASCADE'))

@@ -1,0 +1,38 @@
+{% extends "layout.html" %} 
+{% block title %}Agenda{% endblock %} 
+{% block body %}
+<h3 style="margin-top: 15px;"><i class="fa fa-address-book-o" aria-hidden="true"></i> Telefones de {{contato.nome}}</h3>
+{% if mensagem %}
+    <div class="alert alert-success alert-dismissible" role="alert">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        {{mensagem}}
+    </div>
+{% endif %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Telefone</th>
+            <th scope="col">Tipo Telefone</th>
+            <th scope="col">Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for t in telefones %}
+            <tr>
+                <th scope="row">{{t.id}}</td>
+                <td>{{t.telefone}}</td>
+                <td>{{t.tipo_telefone}}</td>
+                <td>
+                    <a href="/cadastrartelefone/{{contato.id}}/{{t.id}}" title="Editar Telefone" class="btn btn-outline-warning" style="border-radius: 50%;margin-right: 5px;"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                    <a href="/deletartelefone/{{contato.id}}/{{t.id}}" title="Deletar Telefone" class="btn btn-outline-danger" style="border-radius: 50%;"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="/" class="btn btn-danger"><i class="fa fa-reply" aria-hidden="true"></i> Voltar</a>
+<div class="container-floating">
+    <a href="/cadastrartelefone/{{contato.id}}" title="Adicionar novo Telefone para {{contato.nome}}" class="floating-button"><p class="plus">+</p></a>
+</div>
+{% endblock %}

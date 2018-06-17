@@ -1,0 +1,24 @@
+{% extends "layout.html" %} 
+{% block title %}Cadastrar Endereços{% endblock %} 
+{% block body %}
+<h3 style="margin-top: 15px"><i class="fa fa-address-book-o" aria-hidden="true"></i> Cadastrar Endereços</h3>
+
+<form action="{{ url_for('cadastrar_endereco', contato_id=contato.id) }}" method="post" style="margin-top: 20px;">
+    <input type="hidden" value="{{endereco.id}}" name="id" id="id">
+    <div class="form-group">
+      <label for="rua">Rua</label>
+      <input type="text" value="{{endereco.rua}}" class="form-control" id="rua" placeholder="Digite a Rua da Endereço" name="rua" maxlength="255" required>
+    </div>
+    <div class="form-group">
+      <label for="numero">Número</label>
+      <input type="text" value="{{endereco.numero}}" class="form-control" id="numero" placeholder="Digite o Número do Endereço" name="numero" maxlength="255">
+    </div>
+    <div class="form-group">
+      <label for="cep">Cep</label>
+      <input type="text" value="{{endereco.cep}}" class="form-control" id="cep" placeholder="Digite o Cep do Endereço" name="cep" maxlength="255" required>
+    </div>
+    <a href="/enderecos/{{contato.id}}" class="btn btn-danger"><i class="fa fa-reply" aria-hidden="true"></i> Voltar</a>
+    <button type="submit" class="btn btn-success"><i class="fa fa-check" aria-hidden="true"></i> Cadastrar</button>
+</form>
+
+{% endblock %}

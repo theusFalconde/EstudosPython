@@ -1,4 +1,4 @@
-# Database.py
+# -*- coding: utf-8 -*-
 
 from sqlalchemy.orm import sessionmaker, scoped_session
 from DBClasses import Endereco, engine, Contato, Telefone

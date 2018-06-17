@@ -29,8 +29,8 @@
                 <th scope="row">{{c.id}}</td>
                 <td>{{c.nome}}</td>
                 <td>{{c.email}}</td>
-                <td><a href="#" title="Telefones" class="btn btn-outline-success" style="border-radius: 50%;margin-right: 5px;"><i class="fa fa-phone" aria-hidden="true"></i></button>
-                    <a href="#" title="Endereços" class="btn btn-outline-info" style="border-radius: 50%;margin-right: 5px;"><i class="fa fa-map" aria-hidden="true"></i></button>
+                <td><a href="/telefones/{{c.id}}" title="Telefones" class="btn btn-outline-success" style="border-radius: 50%;margin-right: 5px;"><i class="fa fa-phone" aria-hidden="true"></i></button>
+                    <a href="/enderecos/{{c.id}}" title="Endereços" class="btn btn-outline-info" style="border-radius: 50%;margin-right: 5px;"><i class="fa fa-map" aria-hidden="true"></i></button>
                     <a href="/cadastrarcontato/{{c.id}}" title="Editar Contato" class="btn btn-outline-warning" style="border-radius: 50%;margin-right: 5px;"><i class="fa fa-pencil" aria-hidden="true"></i></button>
                     <a href="/deletarcontato/{{c.id}}" title="Deletar Contato" class="btn btn-outline-danger" style="border-radius: 50%;"><i class="fa fa-trash" aria-hidden="true"></i></button>
                 </td>

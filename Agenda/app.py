@@ -145,7 +145,7 @@ def deletar_endereco(contato_id = None, endereco_id = None):
         return redirect(url_for('enderecos', contato_id=contato_id, mensagem='Endereco não encontrado!'))
     
 @app.route('/favicon.ico')
-def hello():
+def favicon():
     return redirect(url_for('static', filename='favicon.ico'), code=200)
 
 app.run(debug=True, use_reloader=True)

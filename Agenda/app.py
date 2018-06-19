@@ -148,4 +148,5 @@ def deletar_endereco(contato_id = None, endereco_id = None):
 def favicon():
     return redirect(url_for('static', filename='favicon.ico'), code=200)
 
-app.run(debug=True, use_reloader=True)
+if __name__ == "__main__":
+    app.run(debug=True, use_reloader=True)
